@@ -1,0 +1,18 @@
+/**
+ * Theme Styles
+ */
+
+// variables
+@import 'variables';
+@import 'mixins';
+
+// import Bootstrap 5
+@import 'bootstrap/bootstrap';
+
+// import BootScore 5 styles
+@import 'bootscore-5';
+
+// theme style parts
+@import 'buttons';
+@import 'movie_quotes';
+@import 'movie_reviews';
