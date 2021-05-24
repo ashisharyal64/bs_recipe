@@ -29,7 +29,7 @@ get_header();
 						<!-- Grid Layout -->
 						<?php if (have_posts() ) : ?>
 							<?php while (have_posts() ) : the_post(); ?>
-								<?php get_template_part('template-part/recipe-parts/content-archive-bs_recipe'); ?>
+								<?php get_template_part('template-parts/content-archive-bs_recipe'); ?>
 							<?php endwhile; ?>
 						<?php endif; ?>
 

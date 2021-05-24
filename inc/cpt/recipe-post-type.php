@@ -50,7 +50,7 @@ function cptui_register_my_cpts() {
         "show_in_rest" => true,
         "rest_base" => "",
         "rest_controller_class" => "WP_REST_Posts_Controller",
-        "has_archive" => false,
+        "has_archive" => true,
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
         "delete_with_user" => false,
@@ -64,6 +64,7 @@ function cptui_register_my_cpts() {
         "supports" => [ "title", "editor", "thumbnail", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "author", "page-attributes", "post-formats" ],
         "taxonomies" => [ "recipe_category" ],
         "show_in_graphql" => false,
+
     ];
 
     register_post_type( "recipe", $args );
