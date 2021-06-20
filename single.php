@@ -39,6 +39,37 @@
 						<?php get_template_part('template-parts/recipe-parts/part-servings'); ?>
 						<?php get_template_part('template-parts/recipe-parts/part-ingredients'); ?>
 						<?php get_template_part('template-parts/recipe-parts/part-steps'); ?>
+						<?php 
+							$taxonomy = 'recipe_tags';
+							$terms = get_object_term_cache( $post->ID, $taxonomy );
+							if( ! empty( $terms )){
+								echo "<h3>Tags</h3>";
+								$output = '';
+								
+							foreach($terms as $term) {
+								if(!empty($output))
+									$output .= ' | ';
+									$output .= '<span class="cat"><a href="'. esc_url( get_term_link( $term )). '">'.$term->name.'</a></span>';
+								}
+							echo $output;
+							}
+						?>
+						
+						<?php 
+							$taxonomy = 'recipe_category';
+							$terms = get_object_term_cache( $post->ID, $taxonomy );
+							if( ! empty( $terms )){
+								echo "<h3>Recipe Categories</h3>";
+								$output = '';
+								
+							foreach($terms as $term) {
+								if(!empty($output))
+									$output .= ' | ';
+									$output .= '<span class="cat"><a href="'. esc_url( get_term_link( $term )). '">'.$term->name.'</a></span>';
+								}
+							echo $output;
+							}
+						?>
                     </div>
 
                     <footer class="entry-footer clear-both">
